@@ -1,3 +1,6 @@
+"""
+Tests translator module.
+"""
 import unittest
 
 import verbcalc
