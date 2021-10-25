@@ -1,6 +1,12 @@
+"""
+Translator module allows to change natural language to mathematical notation.
+"""
+
+
 class Translator:
     """
-    Allows to translate words that mean mathematical actions into their symbols ('plus' will become '+',
+    Allows to translate words that mean mathematical actions into their symbols
+    ('plus' will become '+',
     'minus' will become '-', etc).
     """
 
@@ -16,20 +22,21 @@ class Translator:
                 new_word = ' + '
             else:
                 new_word = word
+
             result += new_word
 
         return result
 
     def translate(self, sentence: str) -> str:
         """
-        Translates maths related words into their symbols.
+          Translates maths related words into their symbols.
 
-        Args:
-            sentence: Sentence to be converted.
+          Args:
+              sentence: Sentence to be converted.
 
-        Returns:
-            Converted sentence.
+          Returns:
+              Converted sentence.
 
-        """
+          """
         sentence_lowered = sentence.lower()
         return self._translate_additions(sentence_lowered)
