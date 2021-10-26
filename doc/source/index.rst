@@ -2,5 +2,11 @@ Welcome to VerbCalc's documentation!
 ====================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :hidden:
+    :numbered:
+
+    introduction
+    installation
+    getting_started
+    api_documentation
+    support
