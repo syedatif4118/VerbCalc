@@ -5,4 +5,4 @@ Welcome to VerbCalc's documentation!
    :maxdepth: 2
    :hidden:
 
-    source/verbcalc.core.rst
+    api_documentation
