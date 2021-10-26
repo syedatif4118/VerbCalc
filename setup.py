@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setup(
     name='verbcalc',
-    version='v1.0.0-alpha',
+    version='v1.0.1-alpha',
     packages=['verbcalc', 'verbcalc.core', 'verbcalc.tests'],
     url='https://github.com/ErykPiasecki07/VerbCalc',
     project_urls={
