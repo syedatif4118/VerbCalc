@@ -10,4 +10,6 @@ Welcome to VerbCalc's documentation!
     getting_started
     api_documentation
     license
+    attributions
+    security
     support
