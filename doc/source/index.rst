@@ -9,4 +9,5 @@ Welcome to VerbCalc's documentation!
     installation
     getting_started
     api_documentation
+    license
     support
