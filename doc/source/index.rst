@@ -3,5 +3,6 @@ Welcome to VerbCalc's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
-    verbcalc.core
+    source/verbcalc.core.rst
