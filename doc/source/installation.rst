@@ -1,3 +1,5 @@
 Installation
 ============
-Soon!
+.. code-block:: console
+
+   $ pip install verbcalc
