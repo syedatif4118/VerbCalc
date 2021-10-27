@@ -1,42 +1,35 @@
 """
 Translator module allows to change natural language to mathematical notation.
 """
+from verbcalc.core.symbols import Symbols
+
+DEFAULT_SYMBOLS = Symbols()
 
 
-class Translator:
+def _translate_additions(sentence: str, symbols: Symbols) -> str:
+    result = ''
+    buffer = sentence.split()
+
+    for word in buffer:
+        if word in symbols.additions:
+            new_word = ' + '
+        else:
+            new_word = word
+
+        result += new_word
+
+    return result
+
+
+def translate(sentence: str, symbols: Symbols = DEFAULT_SYMBOLS) -> str:
     """
-    Allows to translate words that mean mathematical actions into their symbols
-    ('plus' will become '+',
-    'minus' will become '-', etc).
+      Translates maths related words into their symbols.
+
+      Args:
+          sentence: Sentence to be converted.
+          symbols: Instance of symbols to match the words from.
+
+      Returns:
+          Converted sentence.
     """
-
-    def __init__(self):
-        self._additions = ['plus']
-
-    def _translate_additions(self, sentence: str) -> str:
-        result = ''
-        buffer = sentence.split()
-
-        for word in buffer:
-            if word in self._additions:
-                new_word = ' + '
-            else:
-                new_word = word
-
-            result += new_word
-
-        return result
-
-    def translate(self, sentence: str) -> str:
-        """
-          Translates maths related words into their symbols.
-
-          Args:
-              sentence: Sentence to be converted.
-
-          Returns:
-              Converted sentence.
-
-          """
-        sentence_lowered = sentence.lower()
-        return self._translate_additions(sentence_lowered)
+    return _translate_additions(sentence.lower(), symbols)
