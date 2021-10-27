@@ -7,14 +7,25 @@ import verbcalc
 
 
 class TestTranslator(unittest.TestCase):
+    """
+    Tests how translator works.
+    """
+
     def setUp(self):
-        self.verbcalc_translator = verbcalc.Translator()
-        self.values = []
+        self._custom_symbols = verbcalc.Symbols()
+        self._custom_symbols.additions = ['foo', 'bar']
+        self._expected = ['2 + 2', '2 + 2']
 
     def test_addition(self):
-        self.values.append(self.verbcalc_translator.translate('2 plus 2'))
-        self.values.append(self.verbcalc_translator.translate('2 Plus 2'))
-        self.assertListEqual(['2 + 2', '2 + 2'], self.values)
+        values = [verbcalc.translate('2 plus 2'),
+                  verbcalc.translate('2 Plus 2')]
+        self.assertListEqual(self._expected, values)
+
+    def test_translation_with_custom_symbols(self):
+        values = [verbcalc.translate
+                  ('2 foo 2', symbols=self._custom_symbols), verbcalc.translate
+                  ('2 bar 2', symbols=self._custom_symbols)]
+        self.assertListEqual(self._expected, values)
 
 
 if __name__ == '__main__':
