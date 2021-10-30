@@ -14,12 +14,14 @@ class Symbols:
         self._multiplications = ['times', 'multiplied by']
         self._divisions = ['divided by']
         self._exponentiations = ['to the power of']
+        self._absolutes = ['absolute of', 'absolute value of']
         self.symbol_dictionary = {
             '+': self._additions,
             '-': self._subtractions,
             '*': self._multiplications,
             '/': self._divisions,
-            '**': self._exponentiations
+            '**': self._exponentiations,
+            'abs': self._absolutes
         }
 
     @property
@@ -41,6 +43,10 @@ class Symbols:
     @property
     def exponentiations(self) -> list:
         return self._exponentiations
+
+    @property
+    def absolutes(self) -> list:
+        return self._taking_absolute
 
     @additions.setter
     def additions(self, value) -> None:
@@ -66,3 +72,8 @@ class Symbols:
     def exponentiations(self, value) -> None:
         self._exponentiations = value
         self.symbol_dictionary.update({'**': self._exponentiations})
+
+    @absolutes.setter
+    def absolutes(self, value) -> None:
+        self._absolutes = value
+        self.symbol_dictionary.update({'abs': self._absolutes})

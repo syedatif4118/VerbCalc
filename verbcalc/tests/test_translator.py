@@ -17,14 +17,15 @@ class TestTranslator(unittest.TestCase):
         self._custom_symbols.subtractions = ['bar']
         self._custom_symbols.multiplications = ['boo']
         self._custom_symbols.divisions = ['far']
-        self.expected = ['2 + 2', '2 - 2', '2 * 2', '2 / 2', '2 ** 2']
+        self.expected = ['2 + 2', '2 - 2', '2 * 2', '2 / 2', '2 ** 2', 'abs 2']
 
     def test_translation(self):
         values = [verbcalc.translate('2 plus 2'),
                   verbcalc.translate('2 minus 2'),
                   verbcalc.translate('2 times 2'),
                   verbcalc.translate('2 divided by 2'),
-                  verbcalc.translate('2 to the power of 2')]
+                  verbcalc.translate('2 to the power of 2'),
+                  verbcalc.translate('absolute of 2')]
         self.assertListEqual(self.expected, values)
 
     def test_translation_with_custom_symbols(self):
@@ -34,7 +35,8 @@ class TestTranslator(unittest.TestCase):
             verbcalc.translate('2 boo 2', symbols=self._custom_symbols),
             verbcalc.translate('2 far 2', symbols=self._custom_symbols),
             verbcalc.translate('2 to the power of 2',
-                               symbols=self._custom_symbols)
+                               symbols=self._custom_symbols),
+            verbcalc.translate('absolute of 2', symbols=self._custom_symbols)
         ]
         self.assertListEqual(self.expected, values)
 
