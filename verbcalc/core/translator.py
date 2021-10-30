@@ -6,21 +6,6 @@ from verbcalc.core.symbols import Symbols
 DEFAULT_SYMBOLS = Symbols()
 
 
-def _translate_additions(sentence: str, symbols: Symbols) -> str:
-    result = ''
-    buffer = sentence.split()
-
-    for word in buffer:
-        if word in symbols.additions:
-            new_word = ' + '
-        else:
-            new_word = word
-
-        result += new_word
-
-    return result
-
-
 def translate(sentence: str, symbols: Symbols = DEFAULT_SYMBOLS) -> str:
     """
       Translates maths related words into their symbols.
@@ -32,4 +17,10 @@ def translate(sentence: str, symbols: Symbols = DEFAULT_SYMBOLS) -> str:
       Returns:
           Converted sentence.
     """
-    return _translate_additions(sentence.lower(), symbols)
+    result = sentence.lower()
+
+    for key in symbols.symbol_dictionary.keys():
+        for phrase in symbols.symbol_dictionary[key]:
+            result = result.replace(phrase, key)
+
+    return result
