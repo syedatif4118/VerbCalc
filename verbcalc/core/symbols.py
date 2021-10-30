@@ -46,7 +46,7 @@ class Symbols:
 
     @property
     def absolutes(self) -> list:
-        return self._taking_absolute
+        return self._absolutes
 
     @additions.setter
     def additions(self, value) -> None:
