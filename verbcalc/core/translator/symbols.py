@@ -6,6 +6,15 @@
 class Symbols:
     """
     Stores lists with words corresponding to given symbols.
+
+    Hint:
+        You can edit lists like additions, subtractions etc. to make a library's
+        translation to other language (human language, not programming language)
+        or implement any other custom behaviour you desire.
+
+    Attributes:
+        symbol_dictionary:
+            Stores all the symbol keys and their corresponding values.
     """
 
     def __init__(self):
