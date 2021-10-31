@@ -1,8 +1,8 @@
 """
 Allows making calculations.
 """
-from verbcalc import translate
 from verbcalc.core.dispatcher import Dispatcher
+from verbcalc.core.translator.translator import translate
 
 DEFAULT_DISPATCHER = Dispatcher()
 
