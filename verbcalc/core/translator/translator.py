@@ -1,7 +1,7 @@
 """
 Translator module allows to change natural language to mathematical notation.
 """
-from verbcalc.core.symbols import Symbols
+from verbcalc.core.translator.symbols import Symbols
 
 DEFAULT_SYMBOLS = Symbols()
 
