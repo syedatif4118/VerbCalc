@@ -9,18 +9,18 @@ class Dispatcher:
     Dispatches single step operations according to given rules.
 
     Attributes:
-        operations:
-            Dictionary containing string representation of operators along with
-            their callables.
+        arithmetic_operations:
+            Dictionary containing string representation of arithmetic
+            operators along with their callables.
     """
 
     def __init__(self):
-        self.operations = {'**': operator.pow,
-                           '*': operator.mul,
-                           '/': operator.truediv,
-                           '+': operator.add,
-                           '-': operator.sub}
-        self.operations.items()
+        self.arithmetic_operations = {'**': operator.pow,
+                                      '*': operator.mul,
+                                      '/': operator.truediv,
+                                      '+': operator.add,
+                                      '-': operator.sub}
+        self.functions = {'abs': operator.abs}
 
     def dispatch(self, tokens: list) -> int:
         """
@@ -42,7 +42,7 @@ class Dispatcher:
         """
         while len(tokens) > 1:
             last_length = len(tokens)
-            for rule in self.operations.items():
+            for rule in self.arithmetic_operations.items():
                 try:
                     i = tokens.index(rule[0])
                     tokens[i] = str(
@@ -50,6 +50,15 @@ class Dispatcher:
                                 int(tokens[i + 1])))
                     del tokens[i - 1]
                     del tokens[i]
+                except ValueError:
+                    pass
+            for fun in self.functions.items():
+                try:
+                    i = tokens.index(fun[0])
+                    # noinspection PyTypeChecker
+                    tokens[i] = str(
+                        fun[1](int(tokens[i + 1])))
+                    del tokens[i + 1]
                 except ValueError:
                     pass
             if len(tokens) is last_length:
