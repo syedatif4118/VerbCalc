@@ -17,7 +17,7 @@ See: [SECURITY.md](SECURITY.md)<br><br>
 
 ## Installation
 
-`pip install verbcalc`
+`pip install verbcalc` <br><br>
 
 ## Documentation
 
