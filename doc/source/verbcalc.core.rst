@@ -1,15 +1,24 @@
-verbcalc.core.translator module
+verbcalc.core.translator.translator module
 -------------------------------
 
-.. automodule:: verbcalc.core.translator
+.. automodule:: verbcalc.core.translator.translator
    :members:
    :undoc-members:
    :show-inheritance:
 
-verbcalc.core.symbols module
+verbcalc.core.translator.symbols module
 -------------------------------
 
-.. automodule:: verbcalc.core.symbols
+.. automodule:: verbcalc.core.translator.symbols
    :members:
    :undoc-members:
    :show-inheritance:
+
+verbcalc.core.dispatcher module
+-------------------------------
+
+.. automodule:: verbcalc.core.dispatcher
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
