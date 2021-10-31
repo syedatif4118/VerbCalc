@@ -22,6 +22,9 @@ class TestDispatcher(unittest.TestCase):
         self.assertEqual(130, Dispatcher().dispatch(
             ['2', '+', '2', '*', '8', '**', '2']))
 
+    def test_functions(self):
+        self.assertEqual(5, Dispatcher().dispatch(['abs', '-5']))
+
     def test_division_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
             Dispatcher().dispatch(['2', '/', '0'])
