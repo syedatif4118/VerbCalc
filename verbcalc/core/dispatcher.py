@@ -22,7 +22,7 @@ class Dispatcher:
                                       '-': operator.sub}
         self.functions = {'abs': operator.abs}
 
-    def dispatch(self, tokens: list) -> int:
+    def dispatch(self, tokens: list) -> float:
         """
         Dispatches all the operations.
 
@@ -46,8 +46,8 @@ class Dispatcher:
                 try:
                     i = tokens.index(rule[0])
                     tokens[i] = str(
-                        rule[1](int(tokens[i - 1]),
-                                int(tokens[i + 1])))
+                        rule[1](float(tokens[i - 1]),
+                                float(tokens[i + 1])))
                     del tokens[i - 1]
                     del tokens[i]
                 except ValueError:
@@ -57,13 +57,13 @@ class Dispatcher:
                     i = tokens.index(fun[0])
                     # noinspection PyTypeChecker
                     tokens[i] = str(
-                        fun[1](int(tokens[i + 1])))
+                        fun[1](float(tokens[i + 1])))
                     del tokens[i + 1]
                 except ValueError:
                     pass
             if len(tokens) is last_length:
                 raise InvalidExpressionException
-        return int(tokens[0])
+        return float(tokens[0])
 
 
 class InvalidExpressionException(Exception):

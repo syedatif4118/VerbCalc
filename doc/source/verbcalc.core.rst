@@ -22,3 +22,11 @@ verbcalc.core.dispatcher module
    :undoc-members:
    :show-inheritance:
 
+verbcalc.core.calculate module
+-------------------------------
+
+.. automodule:: verbcalc.core.calculate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
