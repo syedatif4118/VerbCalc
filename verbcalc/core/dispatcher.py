@@ -32,10 +32,10 @@ class Dispatcher:
 
         Raises:
             ZeroDivisionError: Calculation requires dividing by zero, which
-            makes small puppies die.
+                               makes small puppies die.
 
             InvalidExpressionException: Raised when expression contains stuff
-            like ['2', '4'] or ['-', '/']
+                                        like ['2', '4'] or ['-', '/']
 
         Returns:
             Result of calculation.
@@ -59,5 +59,6 @@ class Dispatcher:
 
 class InvalidExpressionException(Exception):
     """
-    Raised when expression contains stuff like ['2', '4'] or ['-', '/'].
+    Raised when expression is invalid (for example contains 2 arithmetic
+    operators in a row).
     """

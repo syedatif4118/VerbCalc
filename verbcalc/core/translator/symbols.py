@@ -5,12 +5,12 @@
 
 class Symbols:
     """
-    Stores lists with words corresponding to given symbols.
-
     Hint:
         You can edit lists like additions, subtractions etc. to make a library's
         translation to other language (human language, not programming language)
         or implement any other custom behaviour you desire.
+
+    Stores lists with words corresponding to given symbols.
 
     Attributes:
         symbol_dictionary:
