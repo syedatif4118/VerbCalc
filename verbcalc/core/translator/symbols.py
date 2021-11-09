@@ -24,13 +24,15 @@ class Symbols:
         self._divisions = ['divided by']
         self._exponentiations = ['to the power of']
         self._absolutes = ['absolute of', 'absolute value of']
+        self._modulo = ['mod', 'modulo']
         self.symbol_dictionary = {
             '+': self._additions,
             '-': self._subtractions,
             '*': self._multiplications,
             '/': self._divisions,
             '**': self._exponentiations,
-            'abs': self._absolutes
+            'abs': self._absolutes,
+            'log': self._modulo
         }
 
     @property
@@ -56,6 +58,10 @@ class Symbols:
     @property
     def absolutes(self) -> list:
         return self._absolutes
+
+    @property
+    def modulo(self) -> list:
+        return self._modulo
 
     @additions.setter
     def additions(self, value) -> None:
@@ -86,3 +92,8 @@ class Symbols:
     def absolutes(self, value) -> None:
         self._absolutes = value
         self.symbol_dictionary.update({'abs': self._absolutes})
+
+    @modulo.setter
+    def logarithm(self, value) -> None:
+        self._modulo = value
+        self.symbol_dictionary.update({'mod': self._modulo})
