@@ -12,6 +12,10 @@ class Dispatcher:
         arithmetic_operations:
             Dictionary containing string representation of arithmetic
             operators along with their callables.
+
+        functions:
+            Dictionary containing known functions along with their
+            callables.
     """
 
     def __init__(self):
