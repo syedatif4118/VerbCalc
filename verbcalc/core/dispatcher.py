@@ -23,7 +23,8 @@ class Dispatcher:
                                       '*': operator.mul,
                                       '/': operator.truediv,
                                       '+': operator.add,
-                                      '-': operator.sub}
+                                      '-': operator.sub,
+                                      'root': lambda n, x: x ** (1/n)}
         self.functions = {'abs': operator.abs}
 
     def dispatch(self, tokens: list) -> float:
