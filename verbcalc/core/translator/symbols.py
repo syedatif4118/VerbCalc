@@ -24,6 +24,7 @@ class Symbols:
         self._divisions = ['divided by']
         self._exponentiations = ['to the power of']
         self._absolutes = ['absolute of', 'absolute value of']
+        self._roots = ['root of']
         self._questions = ['what is the result of', 'what is', 'calculate']
         self.symbol_dictionary = {
             '+': self._additions,
@@ -32,6 +33,7 @@ class Symbols:
             '/': self._divisions,
             '**': self._exponentiations,
             'abs': self._absolutes,
+            'root': self._roots,
             '': self._questions
         }
 
@@ -58,6 +60,10 @@ class Symbols:
     @property
     def absolutes(self) -> list:
         return self._absolutes
+
+    @property
+    def roots(self) -> list:
+        return self._roots
 
     @property
     def questions(self) -> list:
@@ -92,6 +98,11 @@ class Symbols:
     def absolutes(self, value) -> None:
         self._absolutes = value
         self.symbol_dictionary.update({'abs': self._absolutes})
+
+    @roots.setter
+    def roots(self, value) -> None:
+        self._roots = value
+        self.symbol_dictionary.update({'root': self._roots})
 
     @questions.setter
     def questions(self, value) -> None:
