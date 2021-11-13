@@ -14,7 +14,7 @@ class TestCalculate(unittest.TestCase):
         self.assertEqual(verbcalc.calculate('2 divided by 2'), 1)
         self.assertEqual(verbcalc.calculate('2 to the power of 2'), 4)
         self.assertEqual(verbcalc.calculate('Absolute value of -2'), 2)
-        #self.assertEqual(verbcalc.calculate('2 mod 2'), 0)
+        self.assertEqual(verbcalc.calculate('2 mod 2'), 0)
 
 
 if __name__ == '__main__':

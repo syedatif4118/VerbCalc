@@ -19,9 +19,9 @@ class Dispatcher:
                                       '*': operator.mul,
                                       '/': operator.truediv,
                                       '+': operator.add,
-                                      '-': operator.sub}
-        self.functions = {'abs': operator.abs,
-                          'mod': operator.mod}
+                                      '-': operator.sub,
+                                      '%': operator.mod}
+        self.functions = {'abs': operator.abs}
 
     def dispatch(self, tokens: list) -> float:
         """

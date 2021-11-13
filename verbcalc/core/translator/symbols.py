@@ -32,7 +32,7 @@ class Symbols:
             '/': self._divisions,
             '**': self._exponentiations,
             'abs': self._absolutes,
-            'log': self._modulo
+            '%': self._modulo
         }
 
     @property
@@ -96,4 +96,4 @@ class Symbols:
     @modulo.setter
     def logarithm(self, value) -> None:
         self._modulo = value
-        self.symbol_dictionary.update({'mod': self._modulo})
+        self.symbol_dictionary.update({'%': self._modulo})
