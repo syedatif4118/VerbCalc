@@ -24,6 +24,7 @@ class Dispatcher:
                                       '/': operator.truediv,
                                       '+': operator.add,
                                       '-': operator.sub,
+                                      '%': operator.mod,
                                       'root': lambda n, x: x ** (1/n)}
         self.functions = {'abs': operator.abs}
 
