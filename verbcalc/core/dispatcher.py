@@ -12,6 +12,10 @@ class Dispatcher:
         arithmetic_operations:
             Dictionary containing string representation of arithmetic
             operators along with their callables.
+
+        functions:
+            Dictionary containing known functions along with their
+            callables.
     """
 
     def __init__(self):
@@ -20,7 +24,8 @@ class Dispatcher:
                                       '/': operator.truediv,
                                       '+': operator.add,
                                       '-': operator.sub,
-                                      '%': operator.mod}
+                                      '%': operator.mod,
+                                      'root': lambda n, x: x ** (1/n)}
         self.functions = {'abs': operator.abs}
 
     def dispatch(self, tokens: list) -> float:
