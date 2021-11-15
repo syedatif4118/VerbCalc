@@ -37,7 +37,8 @@ class TestTranslator(unittest.TestCase):
             verbcalc.translate('2 far 2', symbols=self._custom_symbols),
             verbcalc.translate('2 to the power of 2',
                                symbols=self._custom_symbols),
-            verbcalc.translate('absolute of 2', symbols=self._custom_symbols)
+            verbcalc.translate('absolute of 2', symbols=self._custom_symbols),
+            verbcalc.translate('2 mod 2', symbols=self._custom_symbols)
         ]
         self.assertListEqual(self.expected, values)
 
