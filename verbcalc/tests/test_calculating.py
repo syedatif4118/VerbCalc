@@ -2,11 +2,13 @@
 Tests calculating.
 """
 import unittest
-
 import verbcalc
 
 
 class TestCalculate(unittest.TestCase):
+    """
+    Tests calculate function.
+    """
     def test_calculations(self):
         self.assertEqual(verbcalc.calculate('2 plus 2'), 4)
         self.assertEqual(verbcalc.calculate('what is 2 minus 2'), 0)

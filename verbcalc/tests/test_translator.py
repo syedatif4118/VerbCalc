@@ -2,7 +2,6 @@
 Tests translator module.
 """
 import unittest
-
 import verbcalc
 
 
@@ -17,7 +16,8 @@ class TestTranslator(unittest.TestCase):
         self._custom_symbols.subtractions = ['bar']
         self._custom_symbols.multiplications = ['boo']
         self._custom_symbols.divisions = ['far']
-        self.expected = ['2 + 2', '2 - 2', '2 * 2', '2 / 2', '2 ** 2', 'abs 2', '2 % 2']
+        self.expected = ['2 + 2', '2 - 2', '2 * 2', '2 / 2', '2 ** 2',
+                         'abs 2', '2 % 2']
 
     def test_translation(self):
         values = [verbcalc.translate('2 plus 2'),

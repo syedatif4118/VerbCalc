@@ -66,7 +66,7 @@ class Symbols:
     @property
     def modulo(self) -> list:
         return self._modulo
-    
+
     @property
     def roots(self) -> list:
         return self._roots
