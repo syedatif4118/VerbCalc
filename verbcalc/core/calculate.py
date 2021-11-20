@@ -9,7 +9,7 @@ DEFAULT_DISPATCHER = Dispatcher()
 
 def calculate(sentence: str,
               dispatcher: Dispatcher = DEFAULT_DISPATCHER
-              ) -> float:
+              ) -> str:
     """
     Calculates result from sentence.
 
@@ -23,4 +23,12 @@ def calculate(sentence: str,
     Returns:
         Calculated sentence.
     """
-    return dispatcher.dispatch(translate(sentence).split())
+
+    try:
+        result = dispatcher.dispatch(translate(sentence).split())
+        if result % 1 == 0:
+            return 'The result is ' + str(int(result))
+        else:
+            return 'The result is ' + str(result)
+    except ZeroDivisionError:
+        return 'You cannot divide by zero!'
