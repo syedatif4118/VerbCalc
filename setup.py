@@ -14,7 +14,7 @@ setup(
     },
     license='BSD-3-Clause Licence',
     author='Eryk Piasecki',
-    author_email='eryk.piasecki@outlook.com',
+    author_email='da3aab79-4378-4321-a726-67c4bb1f17ea@aleeas.com',
     description='VerbCalc is a Python library that allows to '
                 'perform calculations based on human speech.',
     long_description=long_description,
