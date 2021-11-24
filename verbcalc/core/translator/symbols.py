@@ -26,7 +26,9 @@ class Symbols:
         self._absolutes = ['absolute of', 'absolute value of']
         self._modulo = ['mod', 'modulo']
         self._roots = ['root of']
-        self._questions = ['what is the result of', 'what is', 'calculate', 'result of', 'how do you', 'find',' how much', 'how much is', 'which number is result of', 'what' ]
+        self._questions = ['what is the result of', 'what is', 'calculate', 
+                           'result of', 'how do you', 'find',' how much', 
+                           'how much is', 'which number is result of', 'what']
         self.symbol_dictionary = {
             '+': self._additions,
             '-': self._subtractions,
