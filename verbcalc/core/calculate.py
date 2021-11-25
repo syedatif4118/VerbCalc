@@ -7,6 +7,7 @@ from verbcalc.core.answers import CustomAnswers
 
 DEFAULT_DISPATCHER = Dispatcher()
 
+
 def calculate(sentence: str,
               dispatcher: Dispatcher = DEFAULT_DISPATCHER,
               silent: bool = False
