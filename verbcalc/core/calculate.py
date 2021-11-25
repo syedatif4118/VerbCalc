@@ -33,7 +33,7 @@ def calculate(sentence: str,
         
         answer = str(int(result)) if result % 1 == 0 else str(result)
         
-        return answer if silent else ' '.join([CustomAnswers().get_phrase(default=True), answer])
+        return answer if silent else ' '.join([CustomAnswers().get_phrase(), answer])
         
     except ZeroDivisionError:
         return 'You cannot divide by zero!'
