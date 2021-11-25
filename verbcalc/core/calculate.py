@@ -1,14 +1,15 @@
 """
 Allows making calculations.
 """
-from verbcalc.core.dispatcher import Dispatcher
+from verbcalc.core.dispatcher import Dispatcher, InvalidExpressionException
 from verbcalc.core.translator.translator import translate
+from verbcalc.core.answers import CustomAnswers
 
 DEFAULT_DISPATCHER = Dispatcher()
 
-
 def calculate(sentence: str,
-              dispatcher: Dispatcher = DEFAULT_DISPATCHER
+              dispatcher: Dispatcher = DEFAULT_DISPATCHER, 
+              silent: bool = False
               ) -> str:
     """
     Calculates result from sentence.
@@ -19,6 +20,9 @@ def calculate(sentence: str,
 
         dispatcher:
             Dispatcher object to use, if none provided it will use default one.
+        
+        silent:
+            Returns only the answer instead of an entire answer sentence
 
     Returns:
         Calculated sentence.
@@ -26,9 +30,12 @@ def calculate(sentence: str,
 
     try:
         result = dispatcher.dispatch(translate(sentence).split())
-        if result % 1 == 0:
-            return 'The result is ' + str(int(result))
-        else:
-            return 'The result is ' + str(result)
+        
+        answer = str(int(result)) if result % 1 == 0 else str(result)
+        
+        return answer if silent else ' '.join([CustomAnswers().get_phrase(default=True), answer])
+        
     except ZeroDivisionError:
         return 'You cannot divide by zero!'
+    except InvalidExpressionException:
+        return 'Your expression is invalid'
