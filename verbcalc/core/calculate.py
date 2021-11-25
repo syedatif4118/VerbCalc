@@ -8,7 +8,7 @@ from verbcalc.core.answers import CustomAnswers
 DEFAULT_DISPATCHER = Dispatcher()
 
 def calculate(sentence: str,
-              dispatcher: Dispatcher = DEFAULT_DISPATCHER, 
+              dispatcher: Dispatcher = DEFAULT_DISPATCHER,
               silent: bool = False
               ) -> str:
     """
@@ -20,7 +20,7 @@ def calculate(sentence: str,
 
         dispatcher:
             Dispatcher object to use, if none provided it will use default one.
-        
+
         silent:
             Returns only the answer instead of an entire answer sentence
 
@@ -30,11 +30,12 @@ def calculate(sentence: str,
 
     try:
         result = dispatcher.dispatch(translate(sentence).split())
-        
+
         answer = str(int(result)) if result % 1 == 0 else str(result)
-        
-        return answer if silent else ' '.join([CustomAnswers().get_phrase(), answer])
-        
+
+        return answer if silent else ' '.join([CustomAnswers().get_phrase(),
+                                               answer])
+
     except ZeroDivisionError:
         return 'You cannot divide by zero!'
     except InvalidExpressionException:
